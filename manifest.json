@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name": "LinkedIn Filter Extension",
+	"version": "1.0",
+	"description": "Hide LinkedIn elements based on their content.",
+	"permissions": ["storage", "activeTab", "scripting"],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://www.linkedin.com/*"],
+			"js": ["content.js"]
+		}
+	],
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": "filter.png"
+	}
+}
